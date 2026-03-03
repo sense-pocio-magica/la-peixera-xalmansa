@@ -2,8 +2,10 @@
 
 internal class Program
 {
-    static void Main(string[] args)
+    private static Partida Partida = new Partida();
+    static void Main()
     {
-        Console.WriteLine("Hello, World!");
+        Partida.Inicialitza();
+        
     }
 }
