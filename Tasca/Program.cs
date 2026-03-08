@@ -3,9 +3,9 @@
 internal class Program
 {
     private static Partida Partida = new Partida();
-    static void Main()
+    public static void Main()
     {
         Partida.Inicialitza();
-        
+        Console.WriteLine(Partida.QuinsAnimalsHanQuedatVius());
     }
 }

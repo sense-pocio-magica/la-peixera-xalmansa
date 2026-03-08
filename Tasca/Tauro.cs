@@ -3,7 +3,7 @@ namespace Tasca;
 public class Tauro : Animals, IReproductor
 {
     private int EscollirSexe = 0;
-    private int VidaRondes;
+    public int VidaRondes;
     public Tauro(bool esunhome, List<(int, int)> posicio, bool viu, int direccio)
         : base (esunhome, posicio, viu, direccio)
     {

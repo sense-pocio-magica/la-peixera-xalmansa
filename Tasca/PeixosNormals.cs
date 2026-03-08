@@ -8,8 +8,7 @@ public class PeixosNormals : Animals, IReproductor
     {
         
     }
-
-    // Como funcionaria?
+    
     public Animals Reproduir(Animals altre)
     {
         if (EscollirSexe == 0)

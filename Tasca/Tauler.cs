@@ -13,7 +13,7 @@ public class Tauler
         {
             for (int j = 0; j < 20; j++)
             {
-                TaulerDuesDimensions[i, j].Clear();
+                TaulerDuesDimensions[i, j] = new List<Animals>();
             }
         }
         foreach (var animal in LlistaAnimals)

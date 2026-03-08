@@ -2,11 +2,11 @@ namespace Tasca;
 
 public abstract class Animals
 {
-    protected bool EsUnHome;
-    protected List<(int, int)> Posicio = new List<(int, int)>();
+    private bool EsUnHome;
+    private List<(int, int)> Posicio = new List<(int, int)>();
     private int X;
     private int Y;
-    protected bool EstaViu;
+    private bool EstaViu;
     protected int Direccio;
 
     protected Animals(bool esunhome, List<(int, int)> posicio, bool estaviu, int direccio)
@@ -17,37 +17,15 @@ public abstract class Animals
         Direccio = direccio;
     }
 
-    public virtual void Mou()
+    public void Mou()
     {
-        // Avall
-        if (Direccio == 0)
-        {
-            CanviPosicio(Posicio);
-        }
-        // Esquerra
-        else if (Direccio == 1)
-        {
-            CanviPosicio(Posicio);
-        }
-        // Adalt
-        else if (Direccio == 2)
-        {
-            CanviPosicio(Posicio);
-        }
-        // Dreta
-        else
-        {
-            CanviPosicio(Posicio);
-        }
+        CanviPosicio(Posicio);
     }
 
-    private List<(int, int)> CanviPosicio(List<(int, int)> PosicioAnimal)
+    protected virtual List<(int, int)> CanviPosicio(List<(int, int)> PosicioAnimal)
     {
-        foreach (var duplasint in PosicioAnimal)
-        {
-            X = duplasint.Item1;
-            Y = duplasint.Item2;
-        }
+        X = PosicioAnimal[0].Item1;
+        Y = PosicioAnimal[0].Item2;
         PosicioAnimal.Clear();
         // Avall
         if (Direccio == 0)
@@ -119,5 +97,20 @@ public abstract class Animals
     public List<(int, int)> RetornaPosicio()
     {
         return Posicio;
+    }
+
+    public int RetornaDireccio()
+    {
+        return Direccio;
+    }
+
+    public void ElAnimalHaMort()
+    {
+        EstaViu = false;
+    }
+
+    public bool EsMascle()
+    {
+        return EsUnHome;
     }
 }
